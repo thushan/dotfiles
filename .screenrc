@@ -1,0 +1,13 @@
+defutf8 on
+defscrollback 32000
+startup_message off
+
+# Default configuration
+screen -t os        1      
+screen -t logs      2   tail -f /var/log/messages
+screen -t htop      3   htop
+screen -t irc       4   irssi
+screen -t python    5   python
+screen -t work      6   
+
+shelltitle "$ |bash"
