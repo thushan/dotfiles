@@ -1,6 +1,9 @@
 defutf8 on
-defscrollback 32000
+vbell off
+defscrollback 5000
 startup_message off
+
+bind - command -c selectHighs 
 
 # Default configuration
 screen -t os        1      
@@ -9,5 +12,12 @@ screen -t htop      3   htop
 screen -t irc       4   irssi
 screen -t python    5   python
 screen -t work      6   
-
 shelltitle "$ |bash"
+
+# src: https://serverfault.com/questions/3740/what-are-useful-screenrc-settings
+# THIS IS THE PRETTY BIT
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+##screen, with the time and date and with the current window highlighted                                                                            
+hardstatus             alwayslastline                                                                                                                          
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
