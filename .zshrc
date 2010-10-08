@@ -20,6 +20,10 @@ autoload -U compinit
 compinit
 
 
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
 # do ls right after cd
 cd () {
   if [ -n $1 ]; then

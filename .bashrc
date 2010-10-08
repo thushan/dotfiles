@@ -4,8 +4,8 @@
 export HISTCONTROL=ignoredups
 export COLORFGBG='default;default'
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 if [ -f /etc/bash_completion ]; then
