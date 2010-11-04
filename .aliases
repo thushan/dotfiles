@@ -13,3 +13,13 @@ alias aptpurge='sudo apt-get remove --purge'
 alias aptdate='sudo apt-get update && sudo apt-get upgrade'
 alias aptgrade='sudo apt-get update && sudo apt-get dist-upgrade'
 alias aptclean='sudo apt-get autoclean && sudo apt-get autoremove'
+
+# git specific
+alias gs='git status'
+alias gss='git status -s'
+alias gp='git push'
+alias gpl='git pull'
+alias gclean='git clean -fd'
+alias gpristine='git reset --hard && git clean -dfx'
+alias gexport='git archive --format zip --output'
+alias gsubu='git submodule update --init --recursive'
