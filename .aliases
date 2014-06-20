@@ -23,3 +23,6 @@ alias gclean='git clean -fd'
 alias gpristine='git reset --hard && git clean -dfx'
 alias gexport='git archive --format zip --output'
 alias gsubu='git submodule update --init --recursive'
+
+# ssh
+alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
