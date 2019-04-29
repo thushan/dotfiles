@@ -8,11 +8,14 @@ alias psync='rsync -avh --info=progress2'
 alias dusage='du -Sh | sort -n -r | less'
 alias topmem='ps h -eo pmem,comm | sort -nr | head'
 
+alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+
 # apt specific
-alias aptpurge='sudo apt-get remove --purge'
-alias aptdate='sudo apt-get update && sudo apt-get upgrade'
-alias aptgrade='sudo apt-get update && sudo apt-get dist-upgrade'
-alias aptclean='sudo apt-get autoclean && sudo apt-get autoremove'
+alias aptpurge='sudo apt remove --purge'
+alias aptdate='sudo apt update && sudo apt-get upgrade'
+alias aptgrade='sudo apt update && sudo apt-get dist-upgrade'
+alias aptclean='sudo apt autoclean && sudo apt-get autoremove'
 
 # git specific
 alias gs='git status'
@@ -26,3 +29,10 @@ alias gsubu='git submodule update --init --recursive'
 
 # ssh
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# serve files via python
+alias pyserve='python -m SimpleHTTPServer'

@@ -5,6 +5,9 @@
 export HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
+# fix strange issues when resizedd.
+shopt -s checkwinsize
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=5000
 HISTFILESIZE=2000
@@ -30,6 +33,7 @@ if ! shopt -oq posix; then
   fi
 fi
 export EDITOR=nano
+export GREP_OPTIONS=' — color=auto'
 export BROWSER="firefox '%s' &"
 
 # urukrama, Ubuntuforums.org	
