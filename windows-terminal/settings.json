@@ -1,0 +1,185 @@
+// Windows Terminal Preview > 2022  Edition (v1.42)
+// Latest version:      https://github.com/thushan/dotfiles
+// Previous versions:   https://gist.github.com/thushan/90e9b0fb8b9cbc8eca674509a026adeb
+// This profile relies on a few dependencies that include:
+//  - gsudo | provides elevation within Windows Terminal itself
+//  - Delugia Nerd Font | main font used within the terminal.
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "newTab",
+            "keys": 
+            [
+                "ctrl+shift+t"
+            ]
+        },
+        {
+            "command": "commandPalette",
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "command": "toggleFocusMode",
+            "keys": "shift+f11"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "Espresso",
+            "fontFace": "Cascadia Mono",
+            "fontSize": 10,
+            "historySize": 9001,
+            "startingDirectory": "D:\\projects"
+        },
+        "list": 
+        [
+            {
+                "closeOnExit": "graceful",
+                "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
+                "cursorColor": "#FFFFFF",
+                "cursorShape": "bar",
+                "guid": "{00000000-0000-0000-ba54-000000000002}",
+                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
+                "name": "Bash",
+                "useAcrylic": true,
+                "acrylicOpacity": 0.90000000000000002
+            },
+            {
+                "background": "#1E1F29",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "fontFace": "Delugia Nerd Font",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "background": "#1E1F29",
+                "commandline": "gsudo %SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "fontFace": "Delugia Nerd Font",
+                "guid": "{62c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+                "name": "PowerShell (admin)",
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "acrylicOpacity": 0.80000000000000004,
+                "closeOnExit": "graceful",
+                "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\Scripts\\aws-shell.exe",
+                "guid": "{fb83d3ea-2429-472b-be65-e8bc61b23553}",
+                "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
+                "name": "AWS CLI \u2601",
+                "snapOnInput": true,
+                "tabTitle": "aws",
+                "useAcrylic": true
+            },
+            {
+                "acrylicOpacity": 0.80000000000000004,
+                "closeOnExit": "graceful",
+                "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\python.exe",
+                "guid": "{7241dc93-3df7-4334-852f-4fa62fab1fb4}",
+                "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
+                "name": "Python v3.8 \ud83d\udc0d",
+                "snapOnInput": true,
+                "tabTitle": "Python",
+                "useAcrylic": true
+            },
+            {
+                "acrylicOpacity": 0.80000000000000004,
+                "closeOnExit": "graceful",
+                "commandline": "ssh thushan@192.168.0.6",
+                "guid": "{4ddabb21-a88b-4c5e-863b-58067670f0cf}",
+                "name": "SSH Zeus \ud83d\udcbb",
+                "tabTitle": "SSH FreeBSD",
+                "useAcrylic": true
+            },
+            {
+                "acrylicOpacity": 0.80000000000000004,
+                "closeOnExit": "graceful",
+                "commandline": "ssh thushan@192.168.0.12",
+                "guid": "{cdfaa442-3268-4ecc-87d2-aa547b7344ce}",
+                "name": "SSH Neo \ud83d\udcbb",
+                "tabTitle": "SSH Linux",
+                "useAcrylic": true
+            },
+            {
+                "acrylicOpacity": 0.80000000000000004,
+                "closeOnExit": "graceful",
+                "commandline": "ssh thushan@192.168.0.10",
+                "guid": "{cdfaa142-3268-4ecc-87c2-aa547b7344ce}",
+                "name": "SSH BerryPi \ud83d\udcbb",
+                "tabTitle": "SSH Linux",
+                "useAcrylic": true
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#323232",
+            "black": "#353535",
+            "blue": "#6C99BB",
+            "brightBlack": "#535353",
+            "brightBlue": "#8AB7D9",
+            "brightCyan": "#DCF4FF",
+            "brightGreen": "#C2E075",
+            "brightPurple": "#EFB5F7",
+            "brightRed": "#F00C0C",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#E1E48B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#BED6FF",
+            "foreground": "#FFFFFF",
+            "green": "#A5C261",
+            "name": "Espresso",
+            "purple": "#D197D9",
+            "red": "#D25252",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEEEEC",
+            "yellow": "#FFC66D"
+        },
+    ]
+}
