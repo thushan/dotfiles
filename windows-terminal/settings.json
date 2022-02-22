@@ -153,6 +153,15 @@
                 "name": "SSH BerryPi \ud83d\udcbb",
                 "tabTitle": "SSH Linux",
                 "useAcrylic": true
+            },
+            {
+                "acrylicOpacity": 0.80000000000000004,
+                "closeOnExit": "graceful",
+                "commandline": "ssh thushan@192.168.0.30",
+                "guid": "{cdfaa242-3268-4ecc-87c2-aa547b7344ce}",
+                "name": "SSH Gandalf \ud83d\udcbb",
+                "tabTitle": "SSH Proxmox",
+                "useAcrylic": true
             }
         ]
     },
@@ -180,6 +189,6 @@
             "selectionBackground": "#FFFFFF",
             "white": "#EEEEEC",
             "yellow": "#FFC66D"
-        },
+        }
     ]
 }
