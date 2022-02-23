@@ -3,8 +3,7 @@
 source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
 
 if [[ $EUID -ne 0 ]]; then
-   show_error "Script needs to run elevated."
-   exit 1
+   die "Script needs to run elevated."
 fi
 
 while getopts u:a:f: flag
