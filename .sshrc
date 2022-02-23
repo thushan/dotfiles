@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+###
+# Sets up default SSH keys found in the SSH folder.
+###
+# Tested on macos, linux & windows (git bash)
+###
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+# find keys stored in the SSH path, prompts for passphrase.
+ssh_keys=($(grep -rnwl ~/.ssh -e '-----BEGIN RSA\|OPENSSH PRIVATE KEY-----'))
+
+if [[ -z $(ps | grep ssh-agent) ]]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+
+ssh_add_keys(){
+  for i in "${ssh_keys[@]}"; do 
+    test -f $i && ssh-add $i; 
+  done  
+}
+
+ssh-add -l | grep "The agent didn't load any identities." && ssh_add_keys
