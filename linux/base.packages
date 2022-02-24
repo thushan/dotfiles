@@ -1,6 +1,0 @@
-#####
-# Base packages for all Linux operating systems
-#####
-htop
-tmux
-zsh
