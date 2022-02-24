@@ -1,0 +1,39 @@
+#############
+# Chocolatey Base Packages
+#############
+
+# system
+gsudo
+
+# utilities
+agentransack
+beyondcompare
+gnupg
+hashtab
+powertoys
+winrar
+
+# hardware
+cpu-z
+gpu-z
+hwinfo
+
+# developer
+beyondcompare
+git
+lazygit
+linqpad6
+openscad
+vscode
+
+# graphics / video
+paint.net
+potplayer
+sumatrapdf
+
+# internet tools / browsers
+dropbox
+brave
+opera
+firefox
+GoogleChrome
