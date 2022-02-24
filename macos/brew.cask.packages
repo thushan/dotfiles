@@ -1,0 +1,25 @@
+#####
+# Cask packages for macos
+#####
+# System
+keepassxc
+iterm2
+flux
+
+# Internet Tools / Browsers
+brave-browser
+dropbox
+firefox
+google-chrome
+opera
+signal
+slack
+zoom
+
+# Utilities
+balenaetcher
+
+# Developer
+dotnet
+postman
+visual-studio-code

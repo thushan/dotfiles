@@ -1,0 +1,8 @@
+#####
+# Developer brew packages for macos
+#####
+awscli
+go
+hugo
+rustup-init
+tinygo
