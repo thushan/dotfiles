@@ -1,0 +1,8 @@
+#####
+# System apt packages for Pop!_OS
+#####
+alacritty
+cpu-x
+fonts-font-awesome
+gparted
+gpu-x

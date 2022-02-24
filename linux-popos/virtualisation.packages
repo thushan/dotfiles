@@ -1,0 +1,12 @@
+#####
+# Virtualisation packages for Pop!_OS
+#####
+bridge-utils
+gnome-boxes
+libvirt-clients
+libvirt-daemon
+libvirt-daemon-system
+ovmf
+qemu-kvm
+virtinst
+virt-manager

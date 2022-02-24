@@ -1,0 +1,11 @@
+#####
+# Base packages for Pop!_OS
+#####
+code
+gnome-tweaks
+htop
+nautilus-admin
+openssh-server
+tmux
+wget
+zsh
