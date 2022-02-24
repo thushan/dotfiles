@@ -11,7 +11,17 @@ function Write-Color([String[]]$Text, [ConsoleColor[]]$Color) {
     }
     Write-Host
 }
-
+Write-Color "Checking for Elevated permissions..." -Color DarkCyan
+if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) 
+{
+    Write-Color "WARNING: Please run script with elevated permissions." -Color Red
+    Write-Color "See how: ","https://www.thushanfernando.com/posts/2020/windows-terminal-setup/#elevate-powershell-easily" -Color Magenta,Green
+    Break
+}
+else 
+{
+    Write-Color "Script running under elevated permissions..." -Color Green
+}
 # Iterates through the file and install or upgrade the silently.
 
 (Get-Content $filename) -notmatch '^#'  -match "\S" `
