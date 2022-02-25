@@ -24,15 +24,23 @@ else
 }
 # Iterates through the file and install or upgrade the silently.
 
+$install_totald = 0
+$install_succes = 0
+$install_failed = 0
+
 (Get-Content $filename) -notmatch '^#'  -match "\S" `
 | ForEach-Object { 
     Write-Color -Text "Installing ", $_, '...' -Color DarkCyan,Magenta,DarkCyan
+    $install_totald++
     choco upgrade -y $_ 
     if( $? ){
         Write-Color -Text "Installing ", $_, "...", "Success :)" -Color DarkCyan,Magenta,DarkCyan,Green
+        $install_succes++
     }
     if( !$? ){
         Write-Color -Text "Installing ", $_, "...", "Failed :(" -Color DarkCyan,Magenta,DarkCyan,Red
-    }
-    
+        $install_failed++
+    }    
 }
+
+Write-Color "Completed installing (", $install_totald , ") packages with (", $install_succes, ") succesful, (",  $install_failed, ") failures."  -Color DarkCyan,Magenta,DarkCyan,Green,DarkCyan,Red,DarkCyan
