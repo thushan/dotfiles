@@ -71,7 +71,6 @@ show_success "Updating brew packages...done!"
 
 # Setup sensible GNU utilities
 show_info "Configuring GNU Core Utilities..."
-brew tap homebrew/dupes
 brew install bash
 brew install coreutils
 brew install findutils
