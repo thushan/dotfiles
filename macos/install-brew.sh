@@ -22,7 +22,10 @@ BASE=(
     go
     hugo
     rustup-init
-    tinygo
+)
+TAPS=(
+    homebrew/cask
+    caskroom/fonts
 )
 CASKS=(
     # System
@@ -74,6 +77,10 @@ show_info "Configuring GNU Core Utilities..."
 sh ./linuxify.sh
 show_success "Configuring GNU Core Utilities...Done!"
 
+show_info "Installing brew taps..."
+brew tap ${TAPS[@]}
+show_success "Installing brew taps...Done!"
+
 show_info "Installing BASE brew packages..."
 brew install ${BASE[@]}
 show_success "Installing BASE brew packages...Done!"
@@ -82,17 +89,9 @@ show_info "Cleaning up brew..."
 brew cleanup
 show_success "Cleaning up brew...Done!"
 
-show_info "Installing brew Cask..."
-brew install caskroom/cask/brew-cask
-show_success "Installing brew Cask...Done!"
-
 show_info "Installing brew cask packages..."
 brew install ${CASKS[@]} --cask
 show_success "Installing brew cask packages...Done!"
-
-show_info "Installing brew Fonts Cask..."
-brew tap caskroom/fonts
-show_success "Installing brew Fonts Cask...Done!"
 
 show_info "Installing brew fonts packages..."
 brew install ${FONTS[@]} --cask
