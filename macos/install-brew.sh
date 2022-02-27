@@ -15,6 +15,7 @@ BASE=(
     unzip
     wget
     youtube-dl
+    # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     zsh-syntax-highlighting
 
     # Developer
@@ -32,7 +33,7 @@ TAPS=(
 CASKS=(
     # System
     keepassxc
-    gpgtools
+    gpg-suite
     iterm2
     flux
 
@@ -58,7 +59,6 @@ CASKS=(
     vlc
 )
 FONTS=(
-    font-inconsolidata
     font-inconsolata
     font-roboto
 )

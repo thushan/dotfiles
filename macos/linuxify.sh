@@ -42,4 +42,10 @@ export PATH="${BREW_HOME}/opt/gnu-which/libexec/gnubin:$PATH"
 # grep
 export PATH="${BREW_HOME}/opt/grep/libexec/gnubin:$PATH"
 
+# ssh-copy-id
+export PATH="${BREW_HOME}/usr/local/opt/ssh-copy-id/bin:$PATH"
+
+# unzip
+export PATH="${BREW_HOME}/usr/local/opt/unzip/bin:$PATH"
+
 unset BREW_HOME
