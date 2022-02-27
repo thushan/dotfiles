@@ -74,11 +74,13 @@ show_info "Configuring GNU Core Utilities..."
 brew install bash
 brew install coreutils
 brew install findutils
-brew install gnu-indent --with-default-names
-brew install gnu-grep --with-default-names
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-which --with-default-names
+brew install gnutls
+brew install gawk
+brew install gnu-indent
+brew install gnu-grep
+brew install gnu-sed
+brew install gnu-tar
+brew install gnu-which
 show_success "Configuring GNU Core Utilities...Done!"
 
 show_info "Installing BASE brew packages..."
