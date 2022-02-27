@@ -22,10 +22,12 @@ BASE=(
     go
     hugo
     rustup-init
+    tinygo
 )
 TAPS=(
     homebrew/cask
-    caskroom/fonts
+    homebrew/cask-fonts
+    tinygo-org/tools
 )
 CASKS=(
     # System
@@ -57,6 +59,7 @@ CASKS=(
 )
 FONTS=(
     font-inconsolidata
+    font-inconsolata
     font-roboto
 )
 
