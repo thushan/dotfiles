@@ -11,7 +11,7 @@ BASE=(
     ssh-copy-id
     tmux
     tree
-    unrar
+    unar
     unzip
     wget
     youtube-dl

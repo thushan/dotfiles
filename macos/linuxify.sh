@@ -13,8 +13,9 @@ brew install coreutils
 brew install findutils
 brew install gnutls
 brew install gawk
+brew install grep
 brew install gnu-indent
-brew install gnu-grep
+brew install gnu-getopt
 brew install gnu-sed
 brew install gnu-tar
 brew install gnu-which
