@@ -33,6 +33,7 @@ TAPS=(
 CASKS=(
     # System
     keepassxc
+    # *NOTE: Requires Password
     gpg-suite
     iterm2
     flux
@@ -45,6 +46,7 @@ CASKS=(
     opera
     signal
     slack
+    # *NOTE: Requires Password
     zoom
 
     # Utilities
@@ -60,7 +62,6 @@ CASKS=(
 )
 FONTS=(
     font-inconsolata
-    font-roboto
 )
 
 source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
