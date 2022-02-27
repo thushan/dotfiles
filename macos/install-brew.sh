@@ -87,7 +87,7 @@ brew install caskroom/cask/brew-cask
 show_success "Installing brew Cask...Done!"
 
 show_info "Installing brew cask packages..."
-brew cask install ${CASKS[@]}
+brew install ${CASKS[@]} --cask
 show_success "Installing brew cask packages...Done!"
 
 show_info "Installing brew Fonts Cask..."
@@ -95,7 +95,7 @@ brew tap caskroom/fonts
 show_success "Installing brew Fonts Cask...Done!"
 
 show_info "Installing brew fonts packages..."
-brew cask install ${FONTS[@]}
+brew install ${FONTS[@]} --cask
 show_success "Installing brew cask packages...Done!"
 
 show_info "Cleaning up brew..."
