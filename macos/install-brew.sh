@@ -71,16 +71,7 @@ show_success "Updating brew packages...done!"
 
 # Setup sensible GNU utilities
 show_info "Configuring GNU Core Utilities..."
-brew install bash
-brew install coreutils
-brew install findutils
-brew install gnutls
-brew install gawk
-brew install gnu-indent
-brew install gnu-grep
-brew install gnu-sed
-brew install gnu-tar
-brew install gnu-which
+sh ./linuxify.sh
 show_success "Configuring GNU Core Utilities...Done!"
 
 show_info "Installing BASE brew packages..."
