@@ -81,7 +81,11 @@ sh ./linuxify.sh
 show_success "Configuring GNU Core Utilities...Done!"
 
 show_info "Installing brew taps..."
-brew tap ${TAPS[@]}
+for i in "${TAPS[@]}"
+do
+    # Have to tap these individually brew /NZ-accent!
+	brew tap $i
+done
 show_success "Installing brew taps...Done!"
 
 show_info "Installing BASE brew packages..."
