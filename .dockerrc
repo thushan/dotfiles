@@ -1,0 +1,46 @@
+# Get latest container ID
+alias dockl="docker ps -l -q"
+
+# Get container process
+alias dockps="docker ps"
+
+# Get process included stop container
+alias dockpa="docker ps -a"
+
+# Get container IP
+alias dockip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dockkd="docker run -d -P"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dockrun="docker run -i -t -P"
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dockexec="docker exec -i -t"
+
+# Stop all containers
+dockstop() { docker stop $(docker ps -a -q); }
+
+# Remove all containers
+dockrm() { docker rm $(docker ps -a -q); }
+
+# Stop and Remove all containers
+alias dockrmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+
+# Remove all images
+dockrmall() { docker rmi $(docker images -q); }
+
+# Dockerfile build, e.g., $dbu tcnksm/test
+dockbuild() { docker build -t=$1 .; }
+
+# Show all alias related docker
+dockalias() {
+    alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort;
+}
+
+# Bash into running container
+dockbash() { docker exec -it -rm $(docker ps -aqf "name=$1") bash -il; }
+
+# Force remove image
+alias dockrmif="docker rmi -f"
