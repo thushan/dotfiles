@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 # inspired by: https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
-echo "-- Setting up OS X"
-echo "OSX: \t $(sw_vers -productVersion)"
-echo "Build: \t $(sw_vers -buildVersion)"
+source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
 
-echo "Initialising..."
+show_info "-- Setting up OS X"
+show_info "OSX:    $(sw_vers -productVersion)"
+show_info "Build:  $(sw_vers -buildVersion)"
+
+show_info "Initialising..."
 # run within sudo
 sudo -v
-echo "Got Sudo and you know it..."
+show_info "Got Sudo and you know it..."
 
 ## POWER
-echo "POWER SETTINGS..."
+show_info "POWER SETTINGS..."
 
 # Hibernation mode
 # 0: Disable hibernation (speeds up entering sleep mode)
@@ -42,7 +44,7 @@ sudo pmset -a displaysleep 15
 sudo pmset -a standbydelay 86400
 
 ## SYSTEM
-echo "SYSTEM SETTINGS..."
+show_info "SYSTEM SETTINGS..."
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -80,7 +82,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 ## DEVICES
-echo "DEVICE SETTINGS..."
+show_info "DEVICE SETTINGS..."
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -90,7 +92,7 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 ## FINDER
-echo "FINDER SETTINGS..."
+show_info "FINDER SETTINGS..."
 
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -137,7 +139,7 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 ## TERMINAL
-echo "TERMINAL SETTINGS..."
+show_info "TERMINAL SETTINGS..."
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
@@ -145,7 +147,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
 ## ACTIVITY MONITOR
-echo "ACTIVITY MONITOR SETTINGS..."
+show_info "ACTIVITY MONITOR SETTINGS..."
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -160,7 +162,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-echo "Killing affected apps..."
+show_info "Killing affected apps..."
 
 for app in "Activity Monitor" \
 	"cfprefsd" \
@@ -170,4 +172,4 @@ for app in "Activity Monitor" \
 	killall "${app}" &> /dev/null
 done
 
-echo "DONE, try turning it off & on again before using things! :-)"
+show_success "DONE, try turning it off & on again before using things! :-)"
