@@ -12,6 +12,10 @@ done
 [[ -z "$sourcefile" ]] && die "-f [sourcefile] missing."
 [ ! -f "$sourcefile" ] && die "sourcefile '$sourcefile' does not exist."
 
+show_info "Adding flathub repo..."
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo  || die 'Failed adding flathub pack.'
+show_success "Adding flathub repo...done!"
+
 show_info "Updating existing flatpak's..."
 flatpak update || die 'Failed updating flatpaks installed.'
 show_success "Updating existing flatpak's...done!"
