@@ -2,7 +2,7 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
 
-while getopts u:a:f: flag
+while getopts f: flag
 do
     case "${flag}" in        
         f) sourcefile=${OPTARG};;
