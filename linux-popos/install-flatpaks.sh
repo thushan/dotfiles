@@ -21,5 +21,5 @@ flatpak update || die 'Failed updating flatpaks installed.'
 show_success "Updating existing flatpak's...done!"
 
 show_info "Installing flatpaks from '$sourcefile'..."
-xargs -a <(awk '! /^ *(#|$)/' "$sourcefile") -r -- flatpak install flathub 
+xargs -a <(awk '! /^ *(#|$)/' "$sourcefile") -r -- flatpak install -y flathub 
 show_success "Installing flatpaks from '$sourcefile'...Done!"
