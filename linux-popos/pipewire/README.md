@@ -6,3 +6,5 @@ It heavily leverages the excellent work by [Guisy Digital](https://github.com/Di
 
 * [setup-loudness-equalisation.sh](setup-loudness-equalisation.sh) - installs the above preset to an Installation of [EasyEffects](https://flathub.org/apps/details/com.github.wwmm.easyeffects) output folder.
 * [LoudnessEqualiser.json](LoudnessEqualiser.json) - my customised version.
+
+Detailed installation and write up on [PipeWire Loudness Normalisation](https://www.thushanfernando.com/notes/popos-pipewire-loudness/) is available too.

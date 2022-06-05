@@ -13,12 +13,14 @@ check_installation() {
     else
         die "Couldn't determine EasyEffects Presets folder."
     fi
+    
     mkdir -p $PRESETS_DIRECTORY
+    show_info "Found Presets at '$PRESETS_DIRECTORY'"
 }
 
 install_preset() {
     PRESET_LOCATION="$PRESETS_DIRECTORY/output/$PRESET"
-    curl "$GIT_REPOSITORY/$PRESET" --output $PRESET_LOCATION --silent
+    curl --location "$GIT_REPOSITORY/$PRESET" --output $PRESET_LOCATION --silent
 }
 
 verify_install() {
