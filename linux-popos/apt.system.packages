@@ -2,6 +2,8 @@
 # System apt packages for Pop!_OS
 #####
 alacritty
+# monitor switching
+ddcutil
 cpu-x
 fonts-font-awesome
 gparted

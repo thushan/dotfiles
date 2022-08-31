@@ -2,14 +2,26 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias ls='ls -F --color=auto'
-alias ll='ls -lah --color=auto'
 alias psync='rsync -avh --info=progress2'
 alias dusage='du -Sh | sort -n -r | less'
-alias topmem='ps h -eo pmem,comm | sort -nr | head'
+alias topmem='ps -eo pmem,pid,user,comm --no-headers | sort -t. -nk1,2 -k4,4 -r | head -n 10'
+alias topcpu='ps -eo pcpu,pid,user,comm --no-headers | sort -t. -nk1,2 -k4,4 -r | head -n 10'
 
 alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+
+# ls specific with exa extra love
+if [ -x "$(command -v exa)" ]; then
+	alias ls='exa'
+	alias tree='exa --tree --level=5'
+	alias lsf='exa -1'
+	alias lst='exa -FlTh --level=5'
+	alias lss='exa -FlTh --level=5 --no-permissions --no-user'
+fi
+
+alias l='ls -lbFh'
+alias ll='ls -lah'
+alias llm='ll --sort=modified'
 
 # apt specific
 alias aptpurge='sudo apt remove --purge'
@@ -36,3 +48,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # serve files via python
 alias pyserve='python -m SimpleHTTPServer'
+
+# Dell monitor specific - switches  display if ddcutil is installed
+if [ -x "$(command -v ddcutil)" ]; then
+	# src: https://askubuntu.com/a/1251533
+	alias dlsw_dp='sudo ddcutil -b 0 setvcp 0x60 0x0f' # DP
+	alias dlsw_usbc='sudo ddcutil -b 0 setvcp 0x60 0x1b' # USB-C
+	alias dlsw_hdmi='sudo ddcutil -b 0 setvcp 0x60 0x11' # HDMI
+fi
