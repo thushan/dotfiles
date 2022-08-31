@@ -39,7 +39,7 @@ pg () {
     then
         pgrep -f $@ | xargs ps -o user,pid,stat,rss,vsz,pcpu,args \
                                --sort -pcpu,-rss;
-    else 
+    else
         exit 1;
     fi
 }
@@ -66,9 +66,9 @@ setprompt ()
     # truncate and pad line1 appropiately
     precmd () {
         local cwdrealwidth=${#${(%):-%~}}
-        
+
         # length of $line1 w/o $cwd = 22
-        if [[ "$cwdrealwidth + 22" -gt $COLUMNS ]]; 
+        if [[ "$cwdrealwidth + 22" -gt $COLUMNS ]];
         then
             # truncate
             local cwdwidth = (( $COLUMNS - 22 ))
@@ -76,11 +76,11 @@ setprompt ()
             # pad
             local padding="${(l.(($COLUMNS - 22 - $cwdrealwidth )))..-.)}"
         fi
-        
+
         local cwd="$c1%$cwdwidth<...<%~%<<"
         local line1="$c3-($cwd$c3)-${padding}$now"
         export PROMPT="${line1}$newline$line2"
     }
-       
+
     preexec () { print -n "$reset_color" }
 }

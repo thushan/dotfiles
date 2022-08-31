@@ -7,6 +7,7 @@ alias dusage='du -Sh | sort -n -r | less'
 alias topmem='ps -eo pmem,pid,user,comm --no-headers | sort -t. -nk1,2 -k4,4 -r | head -n 10'
 alias topcpu='ps -eo pcpu,pid,user,comm --no-headers | sort -t. -nk1,2 -k4,4 -r | head -n 10'
 
+alias paths='echo -e ${PATH//:/\\n}'
 alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 
@@ -42,6 +43,12 @@ alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
 # ssh
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+
+# network
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+# CREDIT: https://stackoverflow.com/a/13322549
+alias mylip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
