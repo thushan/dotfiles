@@ -64,3 +64,7 @@ if [ -x "$(command -v ddcutil)" ]; then
 	alias dlsw_usbc='sudo ddcutil -b 0 setvcp 0x60 0x1b' # USB-C
 	alias dlsw_hdmi='sudo ddcutil -b 0 setvcp 0x60 0x11' # HDMI
 fi
+
+if [ -f ~/.commands ]; then
+    . ~/.commands
+fi
