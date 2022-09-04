@@ -8,7 +8,7 @@ BASE=(
 	.bashrc
 	.zshrc
 	.aliases
-    .commands
+	.commands
 	.tmux.conf
 	.editorconfig
 	.wgetrc
