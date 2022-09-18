@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=nemo-desktop
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_AU]=nemo-desktop
+Name=nemo-desktop
+Comment[en_AU]=Finding Nemo
+Comment=Finding Nemo
