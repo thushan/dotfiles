@@ -7,3 +7,10 @@ ddcutil
 cpu-x
 fonts-font-awesome
 gparted
+# filemanager
+nemo
+nemo-gtkhash
+nemo-font-manager
+nemo-data
+nemo-fileroller
+ddcutil
