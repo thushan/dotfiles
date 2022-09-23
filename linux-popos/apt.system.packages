@@ -2,9 +2,14 @@
 # System apt packages for Pop!_OS
 #####
 alacritty
-# monitor switching
 ddcutil
+gnome-tweaks
+nautilus-admin
+openssh-server
+ripgrep
+# monitor switching
 cpu-x
+ddcutil
 fonts-font-awesome
 gparted
 # filemanager
@@ -13,4 +18,3 @@ nemo-gtkhash
 nemo-font-manager
 nemo-data
 nemo-fileroller
-ddcutil
