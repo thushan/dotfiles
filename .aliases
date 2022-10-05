@@ -65,6 +65,12 @@ if [ -x "$(command -v ddcutil)" ]; then
 	alias dlsw_hdmi='sudo ddcutil -b 0 setvcp 0x60 0x11' # HDMI
 fi
 
+if [ -x "$(command -v batcat)" ]; then
+	batdiff() {
+		git diff --name-only --relative --diff-filter=d | xargs batcat --diff
+	}
+fi
+
 if [ -f ~/.commands ]; then
     . ~/.commands
 fi

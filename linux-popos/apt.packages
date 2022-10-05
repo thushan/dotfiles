@@ -1,17 +1,19 @@
 #####
 # Base packages for Pop!_OS
 #####
+axel
+bat
+btop
+duf
 code
-gnome-tweaks
+diff-so-fancy
+fd-find
 htop
-nautilus-admin
-openssh-server
+silversearcher-ag
 tmux
 wget
 zsh
-diff-so-fancy
-axel
-fd-find
+zoxide
 # media
-gthumb
 gnome-sushi
+gthumb
