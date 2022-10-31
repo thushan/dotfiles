@@ -1,0 +1,74 @@
+# ____ _  _ _    ___  _  _ ___  __     ____ ____ ____ __   ___  __   ___  ____
+# |_ _\||_|\|| \ | _\ ||_|\|  \ | \|\  |  _\| __\| . \| \|\|  \ | \|\|  \ |   |
+#   || | _ |||_|\[__ \| _ || . \|  \|  | _\ |  ]_|  <_|  \|| . \|  \|| . \| . |
+#   |/ |/ |/|___/|___/|/ |/|/\_/|/\_/  |/   |___/|/\_/|/\_/|/\_/|/\_/|___/|___/
+# -----| https://github.com/thushan/dotfiles
+# Live config reload (changes requires restart)
+live_config_reload: true
+
+window:
+  padding:
+    x: 0
+    y: 0
+  # default size
+  dimensions:
+    columns: 190
+    lines: 30
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+  decorations: Full
+  startup_mode: Windowed
+  opacity: 1.0
+
+scrolling:
+  # Specifying '0' will disable scrolling.
+  history: 100000
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+  mouse:
+  url:
+    launcher:
+      # This depends on your OS, on Mac it’s `open`
+      program: open
+    modifiers: Command
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+key_bindings:
+  - { key: V,         mods: Control|Shift, action: Paste                       }
+  - { key: C,         mods: Control|Shift, action: Copy                        }
+  - { key: Insert,    mods: Shift,         action: PasteSelection              }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: Paste,     mods: None,          action: Paste                       }
+  - { key: Copy,      mods: None,          action: Copy                        }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
+  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
+  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
+  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+
+# Font configuration
+font:
+  # Point size
+  size: 11.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 1
