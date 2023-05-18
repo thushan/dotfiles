@@ -4,6 +4,7 @@
 
 # system
 gsudo
+winbtrfs
 
 # utilities
 agentransack
