@@ -41,8 +41,9 @@ alias gexport='git archive --format zip --output'
 alias gsubu='git submodule update --init --recursive'
 alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
-# ssh
+# ssh / scp
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+alias scpp="scp -o PreferredAuthentications=password"
 
 # network
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
