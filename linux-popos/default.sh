@@ -26,4 +26,7 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 # Don't remember history
 gsettings set org.gnome.desktop.privacy remember-recent-files false
 
+# Show all open windows in dock
+gsettings set org.gnome.shell.extensions.dash-to-dock default-windows-preview-to-open true
+
 show_success "Setting up Gnome settings...Done!"
