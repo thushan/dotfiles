@@ -56,7 +56,7 @@ alias mylip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # serve files via python
-alias pyserve='python -m SimpleHTTPServer'
+alias pyserve='python3 -m http.server'
 
 # Dell monitor specific - switches  display if ddcutil is installed
 if [ -x "$(command -v ddcutil)" ]; then
