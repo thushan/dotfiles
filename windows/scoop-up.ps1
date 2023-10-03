@@ -1,6 +1,6 @@
 <#
-   Installs the choco.packages ignoring any comments
-   marked with a # at the start of the line.
+   Installs scoop & scoop packages from a file.
+   Any lines marked with a # at the start of the line are ignored.
 #>
 param(
     [string]
