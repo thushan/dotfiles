@@ -35,6 +35,10 @@ if [ -x "$(command -v git)" ]; then
 		batdiff() {
 			git diff --name-only --relative --diff-filter=d | xargs batcat --diff
 		}
+	elif [ -x "$(command -v bat)" ]; then
+		batdiff() {
+			git diff --name-only --relative --diff-filter=d | xargs bat --diff
+		}
 	fi
 
 fi

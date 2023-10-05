@@ -36,7 +36,7 @@ export EDITOR=nano
 export GREP_OPTIONS=' — color=auto'
 export BROWSER="firefox '%s' &"
 
-# urukrama, Ubuntuforums.org	
+# urukrama, Ubuntuforums.org
 extract () {
      if [ -f $1 ] ; then
          case $1 in
@@ -61,4 +61,8 @@ extract () {
 # tmux
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
+fi
+
+if [ -x "$(command -v starship)" ]; then
+	eval "$(starship init bash)"
 fi
