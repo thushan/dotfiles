@@ -2,12 +2,17 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/scripts/console-colours.sh"
 
+if [[ "$OSTYPE" =~ ^msys ]]; then
+    die 'Windows not supported. Try ~/windows/install-profiles.sh'
+fi
+
 show_info "Setting up default links..."
 
 BASE=(
 	.bashrc
 	.zshrc
 	.aliases
+	.aliases-linux
 	.commands
 	.tmux.conf
 	.editorconfig

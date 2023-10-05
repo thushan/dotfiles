@@ -1,69 +1,32 @@
-// Windows Terminal Preview > 2022  Edition (v1.42)
+// Windows Terminal Preview > 2023  Edition (v2.01)
+// Compatibility:		Windows Terminal 1.17+ (May 29, 2023)
 // Latest version:      https://github.com/thushan/dotfiles
 // Previous versions:   https://gist.github.com/thushan/90e9b0fb8b9cbc8eca674509a026adeb
+//
 // This profile relies on a few dependencies that include:
-//  - gsudo | provides elevation within Windows Terminal itself
+//  - gsudo | provides elevation within Windows Terminal itself (instead of elevate=true)
 //  - Delugia Nerd Font | main font used within the terminal.
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "newTab",
-            "keys": 
-            [
-                "ctrl+shift+t"
-            ]
-        },
-        {
-            "command": "commandPalette",
-            "keys": "ctrl+shift+p"
-        },
-        {
-            "command": "toggleFocusMode",
-            "keys": "shift+f11"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        }
-    ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "profiles": 
+    "defaultProfile": "{00000000-0000-0000-ba54-000000000002}",
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "colorScheme": "Espresso",
-            "fontFace": "Cascadia Mono",
-            "fontSize": 10,
+            "colorScheme": "One Half Dark",
             "historySize": 9001,
-            "startingDirectory": "D:\\projects"
+            "useAtlasEngine": true,
+            "startingDirectory": "D:\\projects",
+            "font":
+            {
+                "face": "Delugia Mono Nerd Font",
+                "size": 10.0
+            },
         },
-        "list": 
+        "list":
         [
             {
                 "closeOnExit": "graceful",
@@ -73,13 +36,12 @@
                 "guid": "{00000000-0000-0000-ba54-000000000002}",
                 "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
                 "name": "Bash",
-                "useAcrylic": true,
-                "acrylicOpacity": 0.90000000000000002
+                "opacity": 90,
+                "useAcrylic": true
             },
             {
                 "background": "#1E1F29",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "fontFace": "Delugia Nerd Font",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -87,11 +49,10 @@
             {
                 "background": "#1E1F29",
                 "commandline": "gsudo %SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "fontFace": "Delugia Nerd Font",
-                "guid": "{62c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "guid": "{62c54bbd-c2c6-5271-96e7-007a87ff44bf}",
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
-                "name": "PowerShell (admin)",
+                "name": "PowerShell (admin)"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
@@ -100,73 +61,125 @@
                 "name": "Command Prompt"
             },
             {
+				"colorScheme": "Solarized Dark",
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+				"colorScheme": "Solarized Dark",
                 "closeOnExit": "graceful",
                 "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\Scripts\\aws-shell.exe",
                 "guid": "{fb83d3ea-2429-472b-be65-e8bc61b23553}",
                 "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
                 "name": "AWS CLI \u2601",
                 "snapOnInput": true,
-                "tabTitle": "aws",
+                "tabTitle": "\u2601 AWS",
+                "opacity": 80,
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "closeOnExit": "graceful",
                 "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\python.exe",
                 "guid": "{7241dc93-3df7-4334-852f-4fa62fab1fb4}",
                 "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
                 "name": "Python v3.8 \ud83d\udc0d",
                 "snapOnInput": true,
-                "tabTitle": "Python",
+                "tabTitle": "\ud83d\udc0d Python",
+                "opacity": 80,
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.6",
                 "guid": "{4ddabb21-a88b-4c5e-863b-58067670f0cf}",
-                "name": "SSH Zeus \ud83d\udcbb",
-                "tabTitle": "SSH FreeBSD",
+                "name": "SSH Zeus ",
+                "tabTitle": "\ud83d\udcbb zeus",
+                "opacity": 80,
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.12",
                 "guid": "{cdfaa442-3268-4ecc-87d2-aa547b7344ce}",
                 "name": "SSH Neo \ud83d\udcbb",
-                "tabTitle": "SSH Linux",
+                "tabTitle": "\ud83d\udcbb neo",
+                "opacity": 80,
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.10",
                 "guid": "{cdfaa142-3268-4ecc-87c2-aa547b7344ce}",
                 "name": "SSH BerryPi \ud83d\udcbb",
-                "tabTitle": "SSH Linux",
+                "tabTitle": "\ud83d\udcbb berrypi",
+                "opacity": 80,
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.30",
                 "guid": "{cdfaa242-3268-4ecc-87c2-aa547b7344ce}",
                 "name": "SSH Gandalf \ud83d\udcbb",
-                "tabTitle": "SSH Proxmox",
+                "tabTitle": "\ud83d\udcbb gandalf",
+                "opacity": 80,
                 "useAcrylic": true
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
+        {
+            "background": "#002B36",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#073642",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2AA198",
+            "foreground": "#839496",
+            "green": "#859900",
+            "name": "Solarized Dark",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
+        },
+        {
+            "background": "#282C34",
+            "black": "#282C34",
+            "blue": "#61AFEF",
+            "brightBlack": "#5A6374",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#DCDFE4",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#DCDFE4",
+            "green": "#98C379",
+            "name": "One Half Dark",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#DCDFE4",
+            "yellow": "#E5C07B"
+        },
         {
             "background": "#323232",
             "black": "#353535",
@@ -189,6 +202,49 @@
             "selectionBackground": "#FFFFFF",
             "white": "#EEEEEC",
             "yellow": "#FFC66D"
+        }
+    ],
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "newTab",
+            "keys":
+            [
+                "ctrl+shift+t"
+            ]
+        },
+        {
+            "command": "commandPalette",
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "command": "toggleFocusMode",
+            "keys": "shift+f11"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
         }
     ]
 }

@@ -29,11 +29,16 @@ Similar process/scripts for `linux-fedora` (except `dnf`).
 
 A handful of choco scripts and my [Windows Terminal](https://github.com/thushan/dotfiles/blob/main/windows/windows-terminal/settings.json) profile are found in there.
 
-Only really use Windows (10) for work so this doesn't get much love anymore.
+From September 2023+; all configurations are Windows 11 based.
+
+- [choco-install.ps1](windows/package-installers/choco-install.ps1) - Install default choco packages from `choco.packages`
+- [scoop-up.ps1](windows/package-installers/scoop-up.ps1) - Install default choco packages from `scoop.packages` (or pass filename in with `-filename`)
+
+Also contains the [Windows Terminal](windows/windows-terminal/README.md) setup.
 
 # Acknowledgements
 
-There has been numerous places the source for the content within this repo was taken from, most are attributed with an 'src' tag somewhere (be it a forum, reddit post etc). 
+There has been numerous places the source for the content within this repo was taken from, most are attributed with an 'src' tag somewhere (be it a forum, reddit post etc).
 
 But most recently, some of the configuration items are heavily influenced by:
 

@@ -1,0 +1,35 @@
+alias psync='rsync -avh --info=progress2'
+alias dusage='du -Sh | sort -n -r | less'
+alias topmem='ps -eo pmem,pid,user,comm --no-headers | sort -t. -nk1,2 -k4,4 -r | head -n 10'
+alias topcpu='ps -eo pcpu,pid,user,comm --no-headers | sort -t. -nk1,2 -k4,4 -r | head -n 10'
+alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+
+# CREDIT: https://stackoverflow.com/a/13322549
+alias mylip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# apt specific
+if [ -x "$(command -v apt)" ]; then
+	# apt specific
+	alias aptpurge='sudo apt remove --purge'
+	alias aptdate='sudo apt update && sudo apt-get upgrade'
+	alias aptgrade='sudo apt update && sudo apt-get dist-upgrade'
+	alias aptclean='sudo apt autoclean && sudo apt-get autoremove'
+fi
+
+# Dell monitor specific - switches  display if ddcutil is installed
+if [ -x "$(command -v ddcutil)" ]; then
+	# src: https://askubuntu.com/a/1251533
+	alias dell_dp='sudo ddcutil -b 0 setvcp 0x60 0x0f' # DP
+	alias dell_usbc='sudo ddcutil -b 0 setvcp 0x60 0x1b' # USB-C
+	alias dell_hdmi='sudo ddcutil -b 0 setvcp 0x60 0x11' # HDMI
+fi
+
+
+if [ -f ~/.commands ]; then
+    . ~/.commands
+fi
