@@ -9,6 +9,7 @@ BASE=(
     pkg-config
     smartmontools
     ssh-copy-id
+	starship
     tmux
     tree
     unar
@@ -73,7 +74,7 @@ if test ! $(which brew); then
 fi
 
 show_info "Updating brew packages..."
-brew update || die 'Failed update & upgrade brew packages.' # && brew upgrade `brew outdated` 
+brew update || die 'Failed update & upgrade brew packages.' # && brew upgrade `brew outdated`
 show_success "Updating brew packages...done!"
 
 # Setup sensible GNU utilities

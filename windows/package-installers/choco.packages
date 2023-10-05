@@ -5,6 +5,7 @@
 # system
 gsudo
 winbtrfs
+starship
 
 # utilities
 agentransack
