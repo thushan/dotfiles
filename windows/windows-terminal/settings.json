@@ -16,7 +16,7 @@
     {
         "defaults":
         {
-            "colorScheme": "Espresso",
+            "colorScheme": "One Half Dark",
             "historySize": 9001,
             "useAtlasEngine": true,
             "startingDirectory": "D:\\projects",
@@ -52,7 +52,7 @@
                 "guid": "{62c54bbd-c2c6-5271-96e7-007a87ff44bf}",
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
-                "name": "PowerShell (admin)",
+                "name": "PowerShell (admin)"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
@@ -61,12 +61,14 @@
                 "name": "Command Prompt"
             },
             {
+				"colorScheme": "Solarized Dark",
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
             {
+				"colorScheme": "Solarized Dark",
                 "closeOnExit": "graceful",
                 "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\Scripts\\aws-shell.exe",
                 "guid": "{fb83d3ea-2429-472b-be65-e8bc61b23553}",
@@ -89,6 +91,7 @@
                 "useAcrylic": true
             },
             {
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.6",
                 "guid": "{4ddabb21-a88b-4c5e-863b-58067670f0cf}",
@@ -98,6 +101,7 @@
                 "useAcrylic": true
             },
             {
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.12",
                 "guid": "{cdfaa442-3268-4ecc-87d2-aa547b7344ce}",
@@ -107,6 +111,7 @@
                 "useAcrylic": true
             },
             {
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.10",
                 "guid": "{cdfaa142-3268-4ecc-87c2-aa547b7344ce}",
@@ -116,6 +121,7 @@
                 "useAcrylic": true
             },
             {
+				"colorScheme": "Espresso",
                 "closeOnExit": "graceful",
                 "commandline": "ssh thushan@192.168.0.30",
                 "guid": "{cdfaa242-3268-4ecc-87c2-aa547b7344ce}",
@@ -128,6 +134,52 @@
     },
     "schemes":
     [
+        {
+            "background": "#002B36",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#073642",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2AA198",
+            "foreground": "#839496",
+            "green": "#859900",
+            "name": "Solarized Dark",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
+        },
+        {
+            "background": "#282C34",
+            "black": "#282C34",
+            "blue": "#61AFEF",
+            "brightBlack": "#5A6374",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#DCDFE4",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#DCDFE4",
+            "green": "#98C379",
+            "name": "One Half Dark",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#DCDFE4",
+            "yellow": "#E5C07B"
+        },
         {
             "background": "#323232",
             "black": "#353535",
