@@ -57,3 +57,21 @@ if [ -x "$(command -v python3)" ]; then
 	# serve files via python
 	alias pyserve='python3 -m http.server'
 fi
+
+if [[ "$OSTYPE" =~ ^linux ]]; then
+	if [ -f ~/.aliases-linux ]; then
+		. ~/.aliases-linux
+	fi
+fi
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+	if [ -f ~/.aliases-macos ]; then
+		. ~/.aliases-macos
+	fi
+fi
+
+if [[ "$OSTYPE" =~ ^msys ]]; then
+	if [ -f ~/.aliases-win ]; then
+		. ~/.aliases-win
+	fi
+fi
