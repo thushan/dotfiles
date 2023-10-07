@@ -14,7 +14,16 @@ function Write-Color([String[]]$Text, [ConsoleColor[]]$Color) {
     }
     Write-Host
 }
+function Add-Bucket([String] $bucket) {
 
+    Write-Color -Text "Checking Scoop bucket ", $bucket, '...' -Color DarkCyan,Magenta,DarkCyan
+	if (-Not (Test-Path $env:USERPROFILE\scoop\buckets\$bucket)) {
+		Write-Color -Text "Adding Scoop Bucket ", $bucket -Color DarkCyan,Magenta
+		scoop bucket add $bucket
+	} else {
+		Write-Color "Scoop bucket ", $bucket , " exists!" -Color Green, Magenta, Green
+	}
+}
 Write-Color "Checking Scoop installed..." -Color DarkCyan
 # Check if Scoop is installed, if not, install it
 if (-Not (Test-Path $env:USERPROFILE\scoop)) {
@@ -23,6 +32,12 @@ if (-Not (Test-Path $env:USERPROFILE\scoop)) {
 } else {
 	Write-Color "Scoop installed already!" -Color Green
 }
+
+# Check default buckets
+# src: https://github.com/ScoopInstaller/Scoop/blob/master/buckets.json
+Add-Bucket "extras"
+Add-Bucket "sysinternals"
+Add-Bucket "nerd-fonts"
 
 # Iterates through the file and install or upgrade the silently.
 $install_totald = 0
