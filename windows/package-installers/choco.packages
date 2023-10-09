@@ -19,6 +19,11 @@ cpu-z
 gpu-z
 hwinfo
 
+# 3d printing
+bambustudio
+orcaslicer
+prusaslicer
+
 # developer
 beyondcompare
 git
