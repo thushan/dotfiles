@@ -19,17 +19,6 @@ cpu-z
 gpu-z
 hwinfo
 
-# 3d printing
-bambustudio
-orcaslicer
-prusaslicer
-
-# developer
-beyondcompare
-git
-jetbrainstoolbox
-vscode
-
 # graphics / video
 paint.net
 potplayer

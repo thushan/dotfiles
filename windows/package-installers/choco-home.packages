@@ -1,0 +1,8 @@
+#############
+# Chocolatey Home Packages
+#############
+
+# 3d printing
+bambustudio
+orcaslicer
+prusaslicer

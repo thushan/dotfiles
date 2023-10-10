@@ -4,7 +4,7 @@
 #>
 param(
     [string]
-	$filename = "scoop.packages"
+	$filename = "scoop-base.packages"
 )
 
 # src: https://stackoverflow.com/a/2688572
