@@ -1,0 +1,14 @@
+<Configuration>
+ <Add DownloadPath="C:\OfficeSetup\" SourcePath="C:\OfficeSetup\" OfficeClientEdition="64">
+  <Product ID="O365ProPlusRetail">
+    <Language ID="en-au" />
+    <ExcludeApp ID="Access" />
+    <ExcludeApp ID="Lync" />
+    <ExcludeApp ID="Outlook" />
+    <ExcludeApp ID="Publisher" />
+  </Product>
+</Add>
+<Updates Enabled="TRUE" />
+</Configuration>
+
+<!-- .\setup.exe /configure office365-config-work.xml -->

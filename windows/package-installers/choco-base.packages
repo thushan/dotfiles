@@ -19,11 +19,6 @@ cpu-z
 gpu-z
 hwinfo
 
-# developer
-beyondcompare
-git
-vscode
-
 # graphics / video
 paint.net
 potplayer
@@ -38,3 +33,4 @@ GoogleChrome
 
 # securitaye
 1password
+signal

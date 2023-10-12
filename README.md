@@ -2,7 +2,7 @@
 
 This repository contains my configuration files and scripts for my `$HOME` as well as default applications I tend to install.
 
-# Operating System Specific Things
+# Operating Systems
 
 There are some OS specific things in operating system specific folders.
 
@@ -27,14 +27,18 @@ Similar process/scripts for `linux-fedora` (except `dnf`).
 
 ## windows
 
-A handful of choco scripts and my [Windows Terminal](https://github.com/thushan/dotfiles/blob/main/windows/windows-terminal/settings.json) profile are found in there.
+A handful of choco / scoop scripts and my [Windows Terminal](https://github.com/thushan/dotfiles/blob/main/windows/windows-terminal/settings.json) profile are found in there.
 
 From September 2023+; all configurations are Windows 11 based.
 
 - [choco-install.ps1](windows/package-installers/choco-install.ps1) - Install default choco packages from `choco.packages`
 - [scoop-up.ps1](windows/package-installers/scoop-up.ps1) - Install default choco packages from `scoop.packages` (or pass filename in with `-filename`)
 
-Also contains the [Windows Terminal](windows/windows-terminal/README.md) setup.
+# Applications
+
+## Office 2021 / Office 365
+
+Because Installing Office is so great now (sic), there's customised configuration files for Office & a [readme](./applications/microsoft-office/readme.md).
 
 # Acknowledgements
 

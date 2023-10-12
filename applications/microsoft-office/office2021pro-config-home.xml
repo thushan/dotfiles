@@ -1,0 +1,17 @@
+<Configuration>
+ <Add DownloadPath="C:\OfficeSetup\" SourcePath="C:\OfficeSetup\" OfficeClientEdition="64">
+  <Product ID="ProPlus2021Retail">
+    <Language ID="en-au" />
+    <ExcludeApp ID="Access" />
+    <ExcludeApp ID="Lync" />
+    <ExcludeApp ID="Outlook" />
+    <ExcludeApp ID="Publisher" />
+    <ExcludeApp ID="OneDrive" />
+    <ExcludeApp ID="Teams" />
+    <ExcludeApp ID="OneNote" />
+  </Product>
+</Add>
+<Updates Enabled="TRUE" />
+</Configuration>
+
+<!-- .\setup.exe /configure office2021pro-config-home.xml -->
