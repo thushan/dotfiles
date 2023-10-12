@@ -24,7 +24,7 @@ fi
 # Dell monitor specific - switches  display if ddcutil is installed
 if [ -x "$(command -v ddcutil)" ]; then
 	# src: https://askubuntu.com/a/1251533
-	alias dell_dp='sudo ddcutil -b 0 setvcp 0x60 0x0f' # DP
+	alias dell_disp='sudo ddcutil -b 0 setvcp 0x60 0x0f' # DP
 	alias dell_usbc='sudo ddcutil -b 0 setvcp 0x60 0x1b' # USB-C
 	alias dell_hdmi='sudo ddcutil -b 0 setvcp 0x60 0x11' # HDMI
 fi
