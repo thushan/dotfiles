@@ -4,6 +4,7 @@ BASE=(
     bash-completion
     curl
     git
+	gdu
     htop
     jq
     pkg-config
