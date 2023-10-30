@@ -24,6 +24,14 @@ function Add-Bucket([String] $bucket) {
 		Write-Color "Scoop bucket ", $bucket , " exists!" -Color Green, Magenta, Green
 	}
 }
+
+function Add-Alias([String] $alias, [String] $command) {
+	$aliases = scoop alias list | Select-Object -ExpandProperty Name
+	if (-Not ($aliases -contains $command)) {
+		Write-Color "Adding Scoop Alias ", $alias, " ", $command -Color DarkCyan, Magenta, DarkCyan, Green
+		scoop alias add $alias $command
+	}
+}
 Write-Color "Checking Scoop installed..." -Color DarkCyan
 # Check if Scoop is installed, if not, install it
 if (-Not (Test-Path $env:USERPROFILE\scoop)) {
@@ -39,10 +47,14 @@ Add-Bucket "extras"
 Add-Bucket "sysinternals"
 Add-Bucket "nerd-fonts"
 
+Add-Alias "upgrade-all" "scoop update '*'"
+
 # Iterates through the file and install or upgrade the silently.
 $install_totald = 0
 $install_succes = 0
 $install_failed = 0
+
+scoop alias add upgrade-all "scoop update '*'"
 
 (Get-Content $filename) -notmatch '^#'  -match "\S" `
 | ForEach-Object {
