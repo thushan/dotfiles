@@ -4,7 +4,8 @@
 #>
 param(
     [string]
-	$filename = "choco-base.packages"
+	$filename = "choco-base.packages",
+	[switch] $configure
 )
 
 # src: https://stackoverflow.com/a/2688572
@@ -34,6 +35,11 @@ if (-Not (Test-Path $env:ChocolateyInstall\bin\choco.exe)) {
 	Write-Color "Choco installed already!" -Color Green
 }
 
+if ($configure.IsPresent)
+{
+	Write-Color "Completed Configuring Choco ", "successfully!" -Color DarkCyan,Green
+	Exit(0)
+}
 # Iterates through the file and install or upgrade the silently.
 $install_totald = 0
 $install_succes = 0
