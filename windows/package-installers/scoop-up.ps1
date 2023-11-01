@@ -4,7 +4,8 @@
 #>
 param(
     [string]
-	$filename = "scoop-base.packages"
+	$filename = "scoop-base.packages",
+	[switch] $configure
 )
 
 # src: https://stackoverflow.com/a/2688572
@@ -27,9 +28,11 @@ function Add-Bucket([String] $bucket) {
 
 function Add-Alias([String] $alias, [String] $command) {
 	$aliases = scoop alias list | Select-Object -ExpandProperty Name
-	if (-Not ($aliases -contains $command)) {
+	if (-Not ($aliases -contains $alias)) {
 		Write-Color "Adding Scoop Alias ", $alias, " ", $command -Color DarkCyan, Magenta, DarkCyan, Green
 		scoop alias add $alias $command
+	} else {
+		Write-Color "Scoop alias ", $alias , " exists!" -Color Green, Magenta, Green
 	}
 }
 Write-Color "Checking Scoop installed..." -Color DarkCyan
@@ -49,12 +52,16 @@ Add-Bucket "nerd-fonts"
 
 Add-Alias "upgrade-all" "scoop update '*'"
 
+if ($configure.IsPresent)
+{
+	Write-Color "Completed Configuring Scoop ", "successfully!" -Color DarkCyan,Green
+	Exit(0)
+}
+
 # Iterates through the file and install or upgrade the silently.
 $install_totald = 0
 $install_succes = 0
 $install_failed = 0
-
-scoop alias add upgrade-all "scoop update '*'"
 
 (Get-Content $filename) -notmatch '^#'  -match "\S" `
 | ForEach-Object {
