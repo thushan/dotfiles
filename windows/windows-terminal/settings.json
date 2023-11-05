@@ -52,7 +52,7 @@
                 "guid": "{62c54bbd-c2c6-5271-96e7-007a87ff44bf}",
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
-                "name": "PowerShell (admin)"
+                "name": "Windows PowerShell (admin)"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
@@ -84,7 +84,7 @@
                 "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\python.exe",
                 "guid": "{7241dc93-3df7-4334-852f-4fa62fab1fb4}",
                 "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
-                "name": "Python v3.8 \ud83d\udc0d",
+                "name": "Python v3.x \ud83d\udc0d",
                 "snapOnInput": true,
                 "tabTitle": "\ud83d\udc0d Python",
                 "opacity": 80,
