@@ -10,10 +10,10 @@ starship
 # utilities
 agentransack
 beyondcompare
-gnupg
-hashtab
-winrar
 free-hex-editor-neo
+gnupg
+openhashtab
+winrar
 
 # hardware
 cpu-z
@@ -21,6 +21,7 @@ gpu-z
 hwinfo
 
 # graphics / video
+fsviewer
 paint.net
 potplayer
 sumatrapdf
