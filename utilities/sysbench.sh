@@ -29,23 +29,29 @@ show_title() {
 show_keyvalue() {
     echo -e "${BOLD}${KEY}$1${ENDMARKER}:${UNBOLD} ${VALUE}$2 ${ENDMARKER}"
 }
+
 show_context() {
     echo -e "${CONTEXT}$1 ${ENDMARKER}"
 }
+
 show_success() {
     echo -e "${SUCCESS}$1 ${ENDMARKER}"
 }
+
 show_success_bold() {
     echo -e "${BOLD}${SUCCESS}SUCCESS:${UNBOLD} ${SUCCESS}$1 ${ENDMARKER}"
 }
+
 show_warning_bold() {
     echo -e "${BOLD}${WARN}WARNING:${UNBOLD} ${WARN}$1 ${ENDMARKER}"
 }
+
 show_error_bold() {
     echo -e "${BOLD}${ERROR}ERROR:${UNBOLD} ${ERROR}$1 ${ENDMARKER}" 1>&2
 }
+
 die() {
-	show_error "$1" 1>&2
+	show_error_bold "$1" 1>&2
 	exit 1
 }
 
@@ -56,7 +62,7 @@ show_title "------------------------------------"
 if [ ! -x "$(command -v sysbench)" ]; then
 	show_warning_bold "Sysbench not found, installing..."
 	if [[ $EUID -ne 0 ]]; then
-		die "Script needs to run elevated."
+		die "Script needs to run elevated to install 'sysbench'."
 	fi
 	apt update && apt install -y sysbench
 fi
@@ -65,6 +71,18 @@ show_success_bold "Sysbench installed :-)"
 
 show_info "----| System Stats"
 
+if [ -x "$(command -v lspci)" ]; then
+	{
+		echo "----> lspci"
+		lspci
+	} >> sysbench.log
+fi
+if [ -x "$(command -v lscpu)" ]; then
+	{
+		echo "----> lscpu"
+		lscpu
+	} >> sysbench.log
+fi
 if [ -x "$(command -v lsusb)" ]; then
 	{
 		echo "----> lsusb"
@@ -72,12 +90,6 @@ if [ -x "$(command -v lsusb)" ]; then
 	} >> sysbench.log
 fi
 
-if [ -x "$(command -v lscpu)" ]; then
-	{
-		echo "----> lscpu"
-		lscpu
-	} >> sysbench.log
-fi
 show_success "Completed: [OK]"
 
 show_info "----| CPU Benchmark"
