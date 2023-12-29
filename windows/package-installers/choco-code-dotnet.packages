@@ -1,0 +1,6 @@
+#############
+# Chocolatey .NET Development Packages
+#############
+
+dotnet-sdk
+linqpad
