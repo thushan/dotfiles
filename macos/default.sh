@@ -6,6 +6,7 @@ source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
 show_info "-- Setting up OS X"
 show_info "OSX:    $(sw_vers -productVersion)"
 show_info "Build:  $(sw_vers -buildVersion)"
+show_info "Kernel: $(uname -r)"
 
 show_info "Initialising..."
 # run within sudo
@@ -52,9 +53,6 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 ## DEVICES
 show_info "DEVICE SETTINGS..."
-
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
