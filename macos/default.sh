@@ -6,43 +6,12 @@ source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
 show_info "-- Setting up OS X"
 show_info "OSX:    $(sw_vers -productVersion)"
 show_info "Build:  $(sw_vers -buildVersion)"
+show_info "Kernel: $(uname -r)"
 
 show_info "Initialising..."
 # run within sudo
 sudo -v
 show_info "Got Sudo and you know it..."
-
-## POWER
-show_info "POWER SETTINGS..."
-
-# Hibernation mode
-# 0: Disable hibernation (speeds up entering sleep mode)
-# 3: Copy RAM to disk so the system state can still be restored in case of a
-#    power failure.
-sudo pmset -a hibernatemode 0
-
-# Remove the sleep image file to save disk space
-sudo rm /private/var/vm/sleepimage
-
-# Create a zero-byte file instead…
-sudo touch /private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /private/var/vm/sleepimage
-
-# Enable lid wakeup
-sudo pmset -a lidwake 1
-
-# Disable machine sleep while charging
-sudo pmset -c sleep 0
-
-# Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
-
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
-
-# Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
 
 ## SYSTEM
 show_info "SYSTEM SETTINGS..."
@@ -54,17 +23,11 @@ sudo nvram SystemAudioVolume=" "
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
 # Show the ~/Library folder
 chflags nohidden ~/Library # && xattr -d com.apple.FinderInfo ~/Library
 
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
-
-# Set Timezone to downunder mate.
-sudo systemsetup -settimezone "Australia/Melbourne" > /dev/null
 
 # Set language and text formats to Australians mate.
 defaults write NSGlobalDomain AppleLanguages -array "en" "au"
@@ -75,6 +38,10 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
+# Show percentage; Hide remaining battery time
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
@@ -82,15 +49,16 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
+# Enable subpixel font rendering on non-Apple LCDs
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
 ## DEVICES
 show_info "DEVICE SETTINGS..."
-
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 ## FINDER
 show_info "FINDER SETTINGS..."
