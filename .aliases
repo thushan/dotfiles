@@ -43,9 +43,8 @@ if [ -x "$(command -v git)" ]; then
 
 fi
 
-if [ -x "$(command -v ssh)" ]; then
-	# ssh / scp
-	alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+if [ -x "$(command -v ollama)" ]; then
+	alias ollama_update='ollama list | awk '\''NR>1 {system("ollama pull " $1)}'\'''
 fi
 
 if [ -x "$(command -v scp)" ]; then
