@@ -1,250 +1,187 @@
-// Windows Terminal Preview > 2023  Edition (v2.01)
-// Compatibility:		Windows Terminal 1.17+ (May 29, 2023)
-// Latest version:      https://github.com/thushan/dotfiles
-// Previous versions:   https://gist.github.com/thushan/90e9b0fb8b9cbc8eca674509a026adeb
-//
-// This profile relies on a few dependencies that include:
-//  - gsudo | provides elevation within Windows Terminal itself (instead of elevate=true)
-//  - Delugia Nerd Font | main font used within the terminal.
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "copyFormatting": "none",
-    "copyOnSelect": false,
+
     "defaultProfile": "{00000000-0000-0000-ba54-000000000002}",
-    "profiles":
-    {
-        "defaults":
-        {
-            "colorScheme": "One Half Dark",
-            "historySize": 9001,
-            "useAtlasEngine": true,
-            "startingDirectory": "D:\\projects",
-            "font":
-            {
-                "face": "Delugia Mono Nerd Font",
-                "size": 10.0
-            },
-        },
-        "list":
-        [
-            {
-                "closeOnExit": "graceful",
-                "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
-                "cursorColor": "#FFFFFF",
-                "cursorShape": "bar",
-                "guid": "{00000000-0000-0000-ba54-000000000002}",
-                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
-                "name": "Bash",
-                "opacity": 90,
-                "useAcrylic": true
-            },
-            {
-                "background": "#1E1F29",
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell"
-            },
-            {
-                "background": "#1E1F29",
-                "commandline": "gsudo %SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "guid": "{62c54bbd-c2c6-5271-96e7-007a87ff44bf}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
-                "name": "Windows PowerShell (admin)"
-            },
-            {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt"
-            },
-            {
-				"colorScheme": "Solarized Dark",
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-				"colorScheme": "Solarized Dark",
-                "closeOnExit": "graceful",
-                "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\Scripts\\aws-shell.exe",
-                "guid": "{fb83d3ea-2429-472b-be65-e8bc61b23553}",
-                "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
-                "name": "AWS CLI \u2601",
-                "snapOnInput": true,
-                "tabTitle": "\u2601 AWS",
-                "opacity": 80,
-                "useAcrylic": true
-            },
-            {
-                "closeOnExit": "graceful",
-                "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\python.exe",
-                "guid": "{7241dc93-3df7-4334-852f-4fa62fab1fb4}",
-                "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
-                "name": "Python v3.x \ud83d\udc0d",
-                "snapOnInput": true,
-                "tabTitle": "\ud83d\udc0d Python",
-                "opacity": 80,
-                "useAcrylic": true
-            },
-            {
-				"colorScheme": "Espresso",
-                "closeOnExit": "graceful",
-                "commandline": "ssh thushan@192.168.0.6",
-                "guid": "{4ddabb21-a88b-4c5e-863b-58067670f0cf}",
-                "name": "SSH Zeus ",
-                "tabTitle": "\ud83d\udcbb zeus",
-                "opacity": 80,
-                "useAcrylic": true
-            },
-            {
-				"colorScheme": "Espresso",
-                "closeOnExit": "graceful",
-                "commandline": "ssh thushan@192.168.0.12",
-                "guid": "{cdfaa442-3268-4ecc-87d2-aa547b7344ce}",
-                "name": "SSH Neo \ud83d\udcbb",
-                "tabTitle": "\ud83d\udcbb neo",
-                "opacity": 80,
-                "useAcrylic": true
-            },
-            {
-				"colorScheme": "Espresso",
-                "closeOnExit": "graceful",
-                "commandline": "ssh thushan@192.168.0.10",
-                "guid": "{cdfaa142-3268-4ecc-87c2-aa547b7344ce}",
-                "name": "SSH BerryPi \ud83d\udcbb",
-                "tabTitle": "\ud83d\udcbb berrypi",
-                "opacity": 80,
-                "useAcrylic": true
-            },
-            {
-				"colorScheme": "Espresso",
-                "closeOnExit": "graceful",
-                "commandline": "ssh thushan@192.168.0.30",
-                "guid": "{cdfaa242-3268-4ecc-87c2-aa547b7344ce}",
-                "name": "SSH Gandalf \ud83d\udcbb",
-                "tabTitle": "\ud83d\udcbb gandalf",
-                "opacity": 80,
-                "useAcrylic": true
-            }
-        ]
-    },
-    "schemes":
-    [
-        {
-            "background": "#002B36",
-            "black": "#002B36",
-            "blue": "#268BD2",
-            "brightBlack": "#073642",
-            "brightBlue": "#839496",
-            "brightCyan": "#93A1A1",
-            "brightGreen": "#586E75",
-            "brightPurple": "#6C71C4",
-            "brightRed": "#CB4B16",
-            "brightWhite": "#FDF6E3",
-            "brightYellow": "#657B83",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#2AA198",
-            "foreground": "#839496",
-            "green": "#859900",
-            "name": "Solarized Dark",
-            "purple": "#D33682",
-            "red": "#DC322F",
-            "selectionBackground": "#FFFFFF",
-            "white": "#EEE8D5",
-            "yellow": "#B58900"
-        },
-        {
-            "background": "#282C34",
-            "black": "#282C34",
-            "blue": "#61AFEF",
-            "brightBlack": "#5A6374",
-            "brightBlue": "#61AFEF",
-            "brightCyan": "#56B6C2",
-            "brightGreen": "#98C379",
-            "brightPurple": "#C678DD",
-            "brightRed": "#E06C75",
-            "brightWhite": "#DCDFE4",
-            "brightYellow": "#E5C07B",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#56B6C2",
-            "foreground": "#DCDFE4",
-            "green": "#98C379",
-            "name": "One Half Dark",
-            "purple": "#C678DD",
-            "red": "#E06C75",
-            "selectionBackground": "#FFFFFF",
-            "white": "#DCDFE4",
-            "yellow": "#E5C07B"
-        },
-        {
-            "background": "#323232",
-            "black": "#353535",
-            "blue": "#6C99BB",
-            "brightBlack": "#535353",
-            "brightBlue": "#8AB7D9",
-            "brightCyan": "#DCF4FF",
-            "brightGreen": "#C2E075",
-            "brightPurple": "#EFB5F7",
-            "brightRed": "#F00C0C",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#E1E48B",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#BED6FF",
-            "foreground": "#FFFFFF",
-            "green": "#A5C261",
-            "name": "Espresso",
-            "purple": "#D197D9",
-            "red": "#D25252",
-            "selectionBackground": "#FFFFFF",
-            "white": "#EEEEEC",
-            "yellow": "#FFC66D"
-        }
+    "copyOnSelect": false,
+    "copyFormatting": "none",
+    "initialCols": 180,
+    "initialRows": 40,
+
+    "actions": [
+      { "id": "User.copy.644BA8F2", "command": { "action": "copy", "singleLine": false } },
+      { "id": "User.commandPalette.D3F0B923", "command": { "action": "commandPalette" } },
+      { "id": "User.paste", "command": "paste" },
+      { "id": "User.newTab.5DEADB41", "command": { "action": "newTab" } },
+      { "id": "User.find", "command": "find" },
+      { "id": "User.toggleFocusMode", "command": "toggleFocusMode" },
+      { "id": "User.splitPane.A6751878", "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" } }
     ],
-    "actions":
-    [
+
+    "keybindings": [
+      { "keys": "ctrl+c", "id": "User.copy.644BA8F2" },
+      { "keys": "alt+shift+d", "id": "User.splitPane.A6751878" },
+      { "keys": "ctrl+shift+p", "id": "User.commandPalette.D3F0B923" },
+      { "keys": "ctrl+shift+t", "id": "User.newTab.5DEADB41" },
+      { "keys": "ctrl+shift+f", "id": "User.find" },
+      { "keys": "ctrl+v", "id": "User.paste" },
+      { "keys": "shift+f11", "id": "User.toggleFocusMode" }
+    ],
+
+    "newTabMenu": [
+      { "type": "remainingProfiles" }
+    ],
+
+    "profiles": {
+      "defaults": {
+        "colorScheme": "One Half Dark",
+        "font": { "face": "Delugia Mono Nerd Font", "size": 10 },
+        "historySize": 9001,
+        "startingDirectory": "%WT_PROJECTS%"
+      },
+      "list": [
         {
-            "command":
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
+          "name": "Bash",
+          "guid": "{00000000-0000-0000-ba54-000000000002}",
+          "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
+          "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
+          "cursorColor": "#FFFFFF",
+          "cursorShape": "bar",
+          "useAcrylic": true,
+          "opacity": 90,
+          "closeOnExit": "graceful"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+          "name": "Windows PowerShell",
+          "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+          "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+          "background": "#1E1F29"
         },
         {
-            "command": "newTab",
-            "keys":
-            [
-                "ctrl+shift+t"
-            ]
+          "name": "Windows PowerShell (admin)",
+          "guid": "{62c54bbd-c2c6-5271-96e7-007a87ff44bf}",
+          "commandline": "gsudo %SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+          "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+          "background": "#1E1F29"
         },
         {
-            "command": "commandPalette",
-            "keys": "ctrl+shift+p"
+          "name": "Command Prompt",
+          "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+          "commandline": "%SystemRoot%\\System32\\cmd.exe"
         },
         {
-            "command": "toggleFocusMode",
-            "keys": "shift+f11"
+          "name": "Azure Cloud Shell",
+          "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+          "colorScheme": "Solarized Dark",
+          "source": "Windows.Terminal.Azure"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+          "name": "AWS CLI ☁",
+          "guid": "{fb83d3ea-2429-472b-be65-e8bc61b23553}",
+          "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\Scripts\\aws-shell.exe",
+          "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
+          "colorScheme": "Solarized Dark",
+          "tabTitle": "☁ AWS",
+          "useAcrylic": true,
+          "opacity": 80,
+          "closeOnExit": "graceful",
+          "snapOnInput": true
         },
         {
-            "command":
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
+          "name": "Python v3.8 🐍",
+          "guid": "{7241dc93-3df7-4334-852f-4fa62fab1fb4}",
+          "commandline": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\python.exe",
+          "icon": "%LOCALAPPDATA%\\Programs\\Python\\Python38-32\\DLLs\\py.ico",
+          "tabTitle": "🐍 Python",
+          "useAcrylic": true,
+          "opacity": 80,
+          "closeOnExit": "graceful",
+          "snapOnInput": true
+        },
+        {
+          "name": "SSH Zeus 🖻",
+          "guid": "{4ddabb21-a88b-4c5e-863b-58067670f0cf}",
+          "commandline": "ssh thushan@192.168.0.6",
+          "colorScheme": "Espresso",
+          "tabTitle": "🖻 zeus",
+          "useAcrylic": true,
+          "opacity": 80,
+          "closeOnExit": "graceful"
+        },
+        {
+          "name": "SSH Neo 🖻",
+          "guid": "{cdfaa442-3268-4ecc-87d2-aa547b7344ce}",
+          "commandline": "ssh thushan@192.168.0.12",
+          "colorScheme": "Espresso",
+          "tabTitle": "🖻 neo",
+          "useAcrylic": true,
+          "opacity": 80,
+          "closeOnExit": "graceful"
+        },
+        {
+          "name": "SSH BerryPi 🖻",
+          "guid": "{cdfaa142-3268-4ecc-87c2-aa547b7344ce}",
+          "commandline": "ssh thushan@192.168.0.10",
+          "colorScheme": "Espresso",
+          "tabTitle": "🖻 berrypi",
+          "useAcrylic": true,
+          "opacity": 80,
+          "closeOnExit": "graceful"
+        },
+        {
+          "name": "SSH Gandalf 🖻",
+          "guid": "{cdfaa242-3268-4ecc-87c2-aa547b7344ce}",
+          "commandline": "ssh thushan@192.168.0.30",
+          "colorScheme": "Espresso",
+          "tabTitle": "🖻 gandalf",
+          "useAcrylic": true,
+          "opacity": 80,
+          "closeOnExit": "graceful"
+        },
+        {
+          "name": "Ubuntu-22.04",
+          "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+          "source": "Windows.Terminal.Wsl",
+          "hidden": true
+        },
+        {
+          "name": "Ubuntu 22.04.5 LTS",
+          "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
+          "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+        },
+        {
+          "name": "PowerShell",
+          "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+          "source": "Windows.Terminal.PowershellCore"
         }
-    ]
-}
+      ]
+    },
+
+    "schemes": [
+      {
+        "name": "Espresso",
+        "background": "#323232",
+        "black": "#353535",
+        "red": "#D25252",
+        "green": "#A5C261",
+        "yellow": "#FFC66D",
+        "blue": "#6C99BB",
+        "purple": "#D197D9",
+        "cyan": "#BED6FF",
+        "white": "#EEEEEC",
+        "brightBlack": "#535353",
+        "brightRed": "#F00C0C",
+        "brightGreen": "#C2E075",
+        "brightYellow": "#E1E48B",
+        "brightBlue": "#8AB7D9",
+        "brightPurple": "#EFB5F7",
+        "brightCyan": "#DCF4FF",
+        "brightWhite": "#FFFFFF",
+        "cursorColor": "#FFFFFF",
+        "foreground": "#FFFFFF",
+        "selectionBackground": "#FFFFFF"
+      }
+    ],
+
+    "themes": []
+  }

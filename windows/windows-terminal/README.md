@@ -6,6 +6,8 @@ This [windows terminal profile](settings.json) has a few dependencies.
 
 - Deluga Nerd Fonts | To get [pixel perfect fonts](https://www.thushanfernando.com/posts/2020/windows-terminal-setup/#pixel-perfect-fonts).
 - GSudo | To [elevate powershell easily](https://www.thushanfernando.com/posts/2020/windows-terminal-setup/#elevate-powershell-easily).
+- Environment Variables:
+  - `WT_PROJECT` - Default home directory (which in my case is where my source/projects are)
 
 There's also a full guide on [Setting up Windows Terminal](https://www.thushanfernando.com/posts/2020/windows-terminal-setup/).
 
