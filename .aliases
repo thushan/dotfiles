@@ -58,7 +58,10 @@ if [ -x "$(command -v git)" ]; then
 			git diff --name-only --relative --diff-filter=d | xargs bat --diff
 		}
 	fi
+fi
 
+if [ -x "$(command -v claude)" ]; then
+	alias claude-yolo='claude --dangerously-skip-permissions'
 fi
 
 if [ -x "$(command -v ollama)" ]; then
