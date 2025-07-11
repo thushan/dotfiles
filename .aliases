@@ -6,18 +6,35 @@ alias .....='cd ../../../..'
 alias psync='rsync -avh --info=progress2'
 alias paths='echo -e ${PATH//:/\\n}'
 
-# ls specific with exa extra love
-if [ -x "$(command -v exa)" ]; then
-	alias ls='exa'
-	alias tree='exa --tree --level=5'
-	alias lsf='exa -1'
-	alias lst='exa -FlTh --level=5'
-	alias lss='exa -FlTh --level=5 --no-permissions --no-user'
+# ls specific with eza extra love
+if [ -x "$(command -v eza)" ]; then
+	alias ls='eza'
+	alias ll='eza -lh'
+	alias lg='eza -l --git'
+	alias lsl='eza -lah'
+	alias tree='eza --tree --level=5'
+	alias lsf='eza -1'
+	alias lst='eza -lTh --level=5'
+	alias lss='eza -lTh --level=5 --no-permissions --no-user'
 fi
 
 alias l='ls -lbFh'
 alias ll='ls -lah'
 alias llm='ll --sort=modified'
+
+alias prune_ds="find . -type f -name '*.DS_Store' -delete"
+alias prune_node="find . -type d -name 'node_modules' -prune -exec rm -rf '{}' +"
+alias prune_thumbs="find . -type f -name '*.thumb' -delete"
+
+alias wttr='curl wttr.in'
+alias now='date "+%Y-%m-%d %H:%M:%S"'
+
+alias path='echo $PATH | tr ":" "\n"'
+alias hist='history | grep'
+
+alias reload='exec "$SHELL"'
+alias reloadrc='source ~/.bashrc'
+alias reloadzsh='source ~/.zshrc'
 
 # git specific
 if [ -x "$(command -v git)" ]; then
@@ -29,6 +46,7 @@ if [ -x "$(command -v git)" ]; then
 	alias gpristine='git reset --hard && git clean -dfx'
 	alias gexport='git archive --format zip --output'
 	alias gsubu='git submodule update --init --recursive'
+	alias gbranch='git checkout -b'
 	alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
 	if [ -x "$(command -v batcat)" ]; then
@@ -40,7 +58,10 @@ if [ -x "$(command -v git)" ]; then
 			git diff --name-only --relative --diff-filter=d | xargs bat --diff
 		}
 	fi
+fi
 
+if [ -x "$(command -v claude)" ]; then
+	alias claude-yolo='claude --dangerously-skip-permissions'
 fi
 
 if [ -x "$(command -v ollama)" ]; then

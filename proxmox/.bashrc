@@ -65,19 +65,6 @@ extract () {
 alias psync='rsync -avh --info=progress2'
 alias paths='echo -e ${PATH//:/\\n}'
 
-# ls specific with exa extra love
-if [ -x "$(command -v exa)" ]; then
-	alias ls='exa'
-	alias tree='exa --tree --level=5'
-	alias lsf='exa -1'
-	alias lst='exa -FlTh --level=5'
-	alias lss='exa -FlTh --level=5 --no-permissions --no-user'
-fi
-
-alias l='ls -lbFh'
-alias ll='ls -lah'
-alias llm='ll --sort=modified'
-
 if [ -x "$(command -v ssh)" ]; then
 	# ssh / scp
 	alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
