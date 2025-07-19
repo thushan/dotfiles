@@ -62,6 +62,10 @@ fi
 
 if [ -x "$(command -v claude)" ]; then
 	alias claude-yolo='claude --dangerously-skip-permissions'
+	if [ -x "$(command -v bunx)" ]; then
+		alias claude-usage='bunx ccusage'
+		alias claude-usage-rt='bunx ccusage blocks --live'
+	fi
 fi
 
 if [ -x "$(command -v ollama)" ]; then
