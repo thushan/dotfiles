@@ -61,11 +61,16 @@ if [ -x "$(command -v git)" ]; then
 fi
 
 if [ -x "$(command -v claude)" ]; then
-	alias claude-yolo='claude --dangerously-skip-permissions'
 	if [ -x "$(command -v bunx)" ]; then
 		alias claude-usage='bunx ccusage'
 		alias claude-usage-rt='bunx ccusage blocks --live'
 	fi
+	alias claude-yolo='claude --dangerously-skip-permissions'
+	alias claude-mcp-init='
+	claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant --project $(pwd) &&
+	claude mcp add sequential-thinking -- uvx --from git+https://github.com/arben-adm/mcp-sequential-thinking --with portalocker mcp-sequential-thinking &&
+	claude mcp add --transport http context7 https://mcp.context7.com/mcp
+	'
 fi
 
 if [ -x "$(command -v ollama)" ]; then
