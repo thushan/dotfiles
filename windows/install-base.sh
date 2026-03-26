@@ -4,6 +4,7 @@ BASE=(
 	.bashrc
 	.bash_profile
 	../.aliases
+	wez-term/.wezterm.lua
 )
 source "$(dirname "${BASH_SOURCE[0]}")./scripts/console-colours.sh"
 
